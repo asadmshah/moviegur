@@ -1,15 +1,19 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
+
     repositories {
         jcenter()
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.google.gms:google-services:1.5.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.3'
+        classpath 'io.fabric.tools:gradle:1.21.2'
     }
+
 }
 
 allprojects {
@@ -20,4 +24,53 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+ext {
+    tmdbKey = properties.getProperty('tmdb.key')
+    trackingIdDebug = properties.getProperty('tracking.id.debug')
+    trackingIdRelease = properties.getProperty('tracking.id.release')
+    crashlyticsKey = properties.getProperty('crashlytics.key')
+    keystorePassword = properties.getProperty('keystore.password')
+    keystoreKeyAlias = properties.getProperty('keystore.key.alias')
+    keystoreKeyPassword = properties.getProperty('keystore.key.password')
+
+    libAndroidAppCompat = 'com.android.support:appcompat-v7:23.1.1'
+    libAndroidSupportV4 = 'com.android.support:support-v4:19.1.0'
+    libAndroidSupportAnnotations = 'com.android.support:support-annotations:23.1.1'
+    libAndroidRecyclerView = 'com.android.support:recyclerview-v7:23.1.1'
+    libAndroidDesign = 'com.android.support:design:23.1.1'
+    libRetrofit = 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    libRetrofitRxJava = 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    libRetrofitLogging = 'com.squareup.okhttp:logging-interceptor:2.6.0'
+    libGlide = 'com.github.bumptech.glide:glide:3.6.1'
+    libTimber = 'com.jakewharton.timber:timber:4.1.0'
+    libRxAndroid = 'io.reactivex:rxandroid:1.1.0'
+    libRxJava = 'io.reactivex:rxjava:1.1.0'
+    libDaggerCompiler = 'com.google.dagger:dagger-compiler:2.0.2'
+    libDagger = 'com.google.dagger:dagger:2.0.2'
+    libJsr250 = 'javax.annotation:jsr250-api:1.0'
+    libLoganSquareCompiler = 'com.bluelinelabs:logansquare-compiler:1.3.4'
+    libLoganSquare = 'com.bluelinelabs:logansquare:1.3.4'
+    libLoganSquareRetrofitConverter = 'com.github.aurae.retrofit:converter-logansquare:1.1.0'
+    libAutoParcel = 'com.github.frankiesardo:auto-parcel:0.3.1'
+    libAutoParcelProcessor = 'com.github.frankiesardo:auto-parcel-processor:0.3.1'
+    libEventBus = 'de.greenrobot:eventbus:2.4.1'
+    libGoogleAnalytics = 'com.google.android.gms:play-services-analytics:8.3.0'
+    libCrashlytics = 'com.crashlytics.sdk.android:crashlytics:2.5.5@aar'
+
+    libJunit = 'junit:junit:4.12'
+    libMockito = 'org.mockito:mockito-all:1.10.19'
+    libPowerMockJunit = 'org.powermock:powermock-module-junit4:1.6.2'
+    libPowerMockMockito = 'org.powermock:powermock-api-mockito:1.6.2'
+    libHamcrest = 'org.hamcrest:hamcrest-all:1.3'
+    libAndroidTestRunner = 'com.android.support.test:runner:0.4.1'
+    libAndroidTestRules = 'com.android.support.test:rules:0.4.1'
+    libEspressoCore = 'com.android.support.test.espresso:espresso-core:2.2.1'
+    libEspressoContrib = 'com.android.support.test.espresso:espresso-contrib:2.2.1'
+    libEspressoIntents = 'com.android.support.test.espresso:espresso-intents:2.2.1'
+    libTruth = 'com.google.truth:truth:0.28'
 }

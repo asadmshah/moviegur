@@ -1,4 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
 
 android {
     compileSdkVersion 23
@@ -10,17 +18,113 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+
+        manifestPlaceholders = [ keyCrashlytics:rootProject.ext.crashlyticsKey ]
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            storeFile file('../moviegur.keystore')
+            storePassword "${rootProject.ext.keystorePassword}"
+            keyAlias "${rootProject.ext.keystoreKeyAlias}"
+            keyPassword "${rootProject.ext.keystoreKeyPassword}"
         }
     }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+
+            buildConfigField "String", "TMDB_KEY", "\"${rootProject.ext.tmdbKey}\""
+            buildConfigField "String", "TRACKING_ID", "\"${rootProject.ext.trackingIdDebug}\""
+
+            testCoverageEnabled true
+        }
+
+        release {
+            buildConfigField "String", "TMDB_KEY", "\"${rootProject.ext.tmdbKey}\""
+            buildConfigField "String", "TRACKING_ID", "\"${rootProject.ext.trackingIdRelease}\""
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        mock {
+
+        }
+
+        prod {
+
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force rootProject.ext.libAndroidSupportAnnotations
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/NOTICE'
+    }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile     fileTree(dir: 'libs', include: ['*.jar'])
+    compile     rootProject.ext.libAndroidAppCompat
+    compile     rootProject.ext.libAndroidSupportV4
+    compile     rootProject.ext.libAndroidSupportAnnotations
+    compile     rootProject.ext.libAndroidRecyclerView
+    compile     rootProject.ext.libAndroidDesign
+    compile     rootProject.ext.libRetrofit
+    compile     rootProject.ext.libRetrofitRxJava
+    compile     rootProject.ext.libRetrofitLogging
+    compile     rootProject.ext.libTimber
+    compile     rootProject.ext.libRxAndroid
+    compile     rootProject.ext.libRxJava
+    apt         rootProject.ext.libDaggerCompiler
+    compile     rootProject.ext.libDagger
+    provided    rootProject.ext.libJsr250
+    compile     rootProject.ext.libAutoParcel
+    apt         rootProject.ext.libAutoParcelProcessor
+    compile     rootProject.ext.libGlide
+    apt         rootProject.ext.libLoganSquareCompiler
+    compile     rootProject.ext.libLoganSquare
+    compile     rootProject.ext.libLoganSquareRetrofitConverter
+    compile     rootProject.ext.libEventBus
+    compile     rootProject.ext.libGoogleAnalytics
+    compile     (rootProject.ext.libCrashlytics) {
+        transitive = true;
+    }
+
+    mockCompile rootProject.ext.libMockito
+    mockCompile rootProject.ext.libPowerMockJunit
+    mockCompile rootProject.ext.libPowerMockMockito
+
+    testCompile rootProject.ext.libJunit
+    testCompile rootProject.ext.libTruth
+
+    androidTestCompile rootProject.ext.libAndroidTestRunner
+    androidTestCompile rootProject.ext.libAndroidTestRules
+    androidTestCompile rootProject.ext.libEspressoCore
+    androidTestCompile rootProject.ext.libEspressoIntents
+    androidTestCompile rootProject.ext.libEspressoContrib
 }

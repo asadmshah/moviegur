@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="16dp"
+    >
+
+    <TextView
+        android:id="@+id/review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:textColor="@color/black_primary_text"
+        android:textSize="14sp"
+        tools:text="Some Author"
+        />
+
+    <TextView
+        android:id="@+id/review_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:singleLine="false"
+        android:textColor="@color/black_primary_text"
+        android:textSize="14sp"
+        tools:text="This is my review of this horrible movie. This movie was so bad that I just fell asleep. It was that bad, that bad."
+        />
+
+</FrameLayout>

@@ -22,3 +22,9 @@ jniLibs
 build
 local.properties
 reports
+
+google-services.json
+
+com_crashlytics_export_strings.xml
+
+moviegur.keystore

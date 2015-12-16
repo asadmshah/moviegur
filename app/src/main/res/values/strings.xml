@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Moviegur</string>
+    <string name="unable_to_load_movies">An error occurred while trying to get you a brand new list of movies</string>
+    <string name="unable_to_get_movie_data">An error occurred while trying to get you more data about this movie</string>
+    <string name="action_toggle_media">Switch between TV and Movies</string>
+    <string name="runtime_format">%1$d minutes</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="overview">Overview</string>
+    <string name="genres">Genres</string>
+    <string name="cast">Cast</string>
+    <string name="crew">Crew</string>
+    <string name="reviews">Reviews</string>
+    <string name="movies">Movies</string>
+    <string name="television">Television</string>
 </resources>

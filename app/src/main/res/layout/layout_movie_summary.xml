@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
+
+    <com.asadmshah.moviegur.widgets.BackdropViewPager
+        android:id="@+id/backdrop_pager"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        tools:background="@android:color/holo_blue_dark"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            tools:background="@android:color/holo_blue_light"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@id/poster"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/poster"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:singleLine="false"
+            android:textColor="@color/black_primary_text"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            tools:text="The Plutonian"
+            />
+
+        <TextView
+            android:id="@+id/tagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/poster"
+            android:layout_below="@id/title"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="false"
+            android:textColor="@color/black_secondary_text"
+            android:textSize="12sp"
+            tools:text="Against all odds, this man does absolutely nothing. He dies in the end."
+            />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <TextView
+            android:id="@+id/release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:singleLine="false"
+            android:textColor="@color/black_secondary_text"
+            android:textSize="12sp"
+            tools:text="September 2015"
+            />
+
+        <TextView
+            android:id="@+id/runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:singleLine="false"
+            android:textColor="@color/black_secondary_text"
+            android:textSize="12sp"
+            tools:text="114 minutes"
+            />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black_dividers"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:singleLine="false"
+        android:text="@string/overview"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:singleLine="false"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="12sp"
+        tools:text="This is my overview. Yes, this one right here. This certainly is an overview. It's a good one too. It's so damn good"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black_dividers"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:singleLine="false"
+        android:text="@string/genres"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        />
+
+    <TextView
+        android:id="@+id/genres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:singleLine="false"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="12sp"
+        tools:text="Action, Adventure, Comedy, Hot Fire"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black_dividers"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:singleLine="false"
+        android:text="@string/cast"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cast_list"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:singleLine="false"
+        android:text="@string/crew"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/crew_list"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black_dividers"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:singleLine="false"
+        android:text="@string/reviews"
+        android:textColor="@color/black_secondary_text"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        />
+
+    <com.asadmshah.moviegur.widgets.ReviewsView
+        android:id="@+id/reviews_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        />
+
+</LinearLayout>

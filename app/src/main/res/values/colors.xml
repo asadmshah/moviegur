@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">@color/mdWhite</color>
+    <color name="colorPrimaryDark">@color/mdWhite</color>
+    <color name="colorAccent">#448AFF</color>
+
+    <color name="mdBlack">#212121</color>
+    <color name="black">#000</color>
+    <color name="black_primary_text">#dd000000</color>
+    <color name="black_secondary_text">#89000000</color>
+    <color name="black_icons">#89000000</color>
+    <color name="black_disabled_text">#61000000</color>
+    <color name="black_hint_text">#61000000</color>
+    <color name="black_dividers">#1f000000</color>
+
+    <color name="mdWhite">#FAFAFA</color>
+    <color name="white_primary_text">#FFF</color>
+    <color name="white_secondary_text">#b2ffffff</color>
+    <color name="white_icons">#b2ffffff</color>
+    <color name="white_disabled_text">#4dffffff</color>
+    <color name="white_hint_text">#4dffffff</color>
+    <color name="white_dividers">#1fffffff</color>
+
+    <color name="toolbar_items">@color/black_icons</color>
+
 </resources>
