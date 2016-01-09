@@ -1,8 +1,10 @@
 [![Moviegur](art/feature-graphic.jpg)][1]
 
-[![Download](art/google-play-badge.png)][1]
+<a href="https://play.google.com/store/apps/details?id=com.asadmshah.moviegur">
+    <img src="art/google-play-badge.png" width="200px" height="60px" />
+</a>
 
-[![Moviegur]()[2]
+![Demo](https://giant.gfycat.com/OblongMatureBufflehead.gif)
 
 # Moviegur
 
@@ -57,4 +59,3 @@ License
 
 
  [1]: https://play.google.com/store/apps/details?id=com.asadmshah.moviegur
- [2]: https://fat.gfycat.com/OblongMatureBufflehead.webm
