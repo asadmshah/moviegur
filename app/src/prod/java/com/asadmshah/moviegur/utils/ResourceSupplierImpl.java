@@ -12,4 +12,13 @@ public class ResourceSupplierImpl implements ResourceSupplier {
         this.context = context;
     }
 
+    @Override
+    public String[] getLibraryTitles() {
+        return context.getResources().getStringArray(R.array.library_titles);
+    }
+
+    @Override
+    public String[] getLibraryDescriptions() {
+        return context.getResources().getStringArray(R.array.library_descriptions);
+    }
 }
