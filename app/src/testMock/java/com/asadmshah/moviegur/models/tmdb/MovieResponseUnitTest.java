@@ -1,6 +1,6 @@
 package com.asadmshah.moviegur.models.tmdb;
 
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class MovieResponseUnitTest {
 
     @Test
     public void parseJsonResponse_movie() throws Exception {
-        InputStream inputStream = ResourceLoader.load(this, "tmdb_movie.json");
+        InputStream inputStream = TestResourceLoader.load(this, "tmdb_movie.json");
         MovieResponse response = LoganSquare.parse(inputStream, MovieResponse.class);
 
         assertNotNull(response);

@@ -1,6 +1,6 @@
 package com.asadmshah.moviegur.models.tmdb;
 
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class MoviesListResponseUnitTest {
     }
 
     private MoviesListResponse getMoviesListResponse(String filename) throws Exception {
-        InputStream inputStream = ResourceLoader.load(this, filename);
+        InputStream inputStream = TestResourceLoader.load(this, filename);
         return LoganSquare.parse(inputStream, MoviesListResponse.class);
     }
 

@@ -4,7 +4,7 @@ import com.asadmshah.moviegur.models.Movie;
 import com.asadmshah.moviegur.models.MoviesList;
 import com.asadmshah.moviegur.models.tmdb.MovieResponse;
 import com.asadmshah.moviegur.models.tmdb.MoviesListResponse;
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 
 import java.io.IOException;
@@ -58,7 +58,7 @@ public class MovieDatabaseClientImpl implements MovieDatabaseClient {
     }
 
     private <T> Observable<T> getResponseObservableFromFile(String filename, Class<T> tClass) {
-        InputStream inputStream = ResourceLoader.load(this, filename);
+        InputStream inputStream = TestResourceLoader.load(this, filename);
         try {
             T response = LoganSquare.parse(inputStream, tClass);
             return Observable.just(response);

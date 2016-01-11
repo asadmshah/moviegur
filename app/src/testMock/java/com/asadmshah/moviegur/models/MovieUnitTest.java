@@ -1,7 +1,7 @@
 package com.asadmshah.moviegur.models;
 
 import com.asadmshah.moviegur.models.tmdb.MovieResponse;
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 
 import org.junit.Test;
@@ -14,7 +14,7 @@ public class MovieUnitTest {
 
     @Test
     public void convertJsonModelToMovieModel() throws Exception {
-        InputStream inputStream = ResourceLoader.load(this, "tmdb_movie.json");
+        InputStream inputStream = TestResourceLoader.load(this, "tmdb_movie.json");
         Movie movie = Movie.create(LoganSquare.parse(inputStream, MovieResponse.class));
 
         assertEquals(939841200000L, movie.releaseDate());

@@ -1,7 +1,7 @@
 package com.asadmshah.moviegur.models;
 
 import com.asadmshah.moviegur.models.tmdb.MoviesListResponse;
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 
 import org.junit.Test;
@@ -15,7 +15,7 @@ public class MoviesListUnitTest {
 
     @Test
     public void convertJsonModelToMoviesListModel() throws Exception {
-        InputStream inputStream = ResourceLoader.load(this, "tmdb_upcoming_1.json");
+        InputStream inputStream = TestResourceLoader.load(this, "tmdb_upcoming_1.json");
         MoviesList moviesList = MoviesList.create(LoganSquare.parse(inputStream, MoviesListResponse.class));
         assertNotNull(moviesList);
 

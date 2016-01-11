@@ -9,7 +9,7 @@ import com.asadmshah.moviegur.screens.movie_summary.MovieSummaryScreenEvents;
 import com.asadmshah.moviegur.screens.movies_list.MoviesListScreenEvents;
 import com.asadmshah.moviegur.screens.movies_list.MoviesListScreenListType;
 import com.asadmshah.moviegur.utils.PresenterSaver;
-import com.asadmshah.moviegur.utils.ResourceLoader;
+import com.asadmshah.moviegur.utils.TestResourceLoader;
 import com.bluelinelabs.logansquare.LoganSquare;
 import com.google.common.collect.Range;
 
@@ -252,7 +252,7 @@ public class MainScreenPresenterUnitTest {
     }
 
     private MoviesList generateMoviesList() throws IOException {
-        InputStream inputStream = ResourceLoader.load(this, "tmdb_popular_1.json");
+        InputStream inputStream = TestResourceLoader.load(this, "tmdb_popular_1.json");
         return MoviesList.create(LoganSquare.parse(inputStream, MoviesListResponse.class));
     }
 
