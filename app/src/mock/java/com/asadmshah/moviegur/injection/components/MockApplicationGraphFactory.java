@@ -4,6 +4,7 @@ import com.asadmshah.moviegur.injection.modules.MockAnalyticsModule;
 import com.asadmshah.moviegur.injection.modules.MockEventBusModule;
 import com.asadmshah.moviegur.injection.modules.MockMovieDatabaseModule;
 import com.asadmshah.moviegur.injection.modules.MockPreferencesModule;
+import com.asadmshah.moviegur.injection.modules.MockResourceSupplierModule;
 
 public final class MockApplicationGraphFactory {
 
@@ -13,6 +14,7 @@ public final class MockApplicationGraphFactory {
                 .mockMovieDatabaseModule(new MockMovieDatabaseModule())
                 .mockEventBusModule(new MockEventBusModule())
                 .mockAnalyticsModule(new MockAnalyticsModule())
+                .mockResourceSupplierModule(new MockResourceSupplierModule())
                 .build();
     }
 

@@ -8,11 +8,13 @@ import com.asadmshah.moviegur.injection.modules.MovieDatabaseModule;
 import com.asadmshah.moviegur.injection.modules.MoviegurApplicationModule;
 import com.asadmshah.moviegur.injection.modules.NetworkModule;
 import com.asadmshah.moviegur.injection.modules.PreferencesModule;
+import com.asadmshah.moviegur.injection.modules.ResourceSupplierModule;
 import com.asadmshah.moviegur.network.MovieDatabaseClient;
 import com.asadmshah.moviegur.preferences.PreferencesStore;
 import com.asadmshah.moviegur.screens.main.MainScreenPresenter;
 import com.asadmshah.moviegur.screens.movie_summary.MovieSummaryScreenPresenter;
 import com.asadmshah.moviegur.screens.movies_list.MoviesListScreenPresenter;
+import com.asadmshah.moviegur.utils.ResourceSupplier;
 
 import javax.inject.Singleton;
 
@@ -26,7 +28,8 @@ import dagger.Component;
                 NetworkModule.class,
                 EventBusModule.class,
                 MovieDatabaseModule.class,
-                AnalyticsModule.class
+                AnalyticsModule.class,
+                ResourceSupplierModule.class
         }
 )
 public interface ApplicationGraph {
@@ -38,4 +41,5 @@ public interface ApplicationGraph {
     EventBus eventBus();
     MovieDatabaseClient movieDatabaseClient();
     Analytics analytics();
+    ResourceSupplier resourceSupplier();
 }

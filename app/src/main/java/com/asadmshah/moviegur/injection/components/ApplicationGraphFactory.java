@@ -7,6 +7,7 @@ import com.asadmshah.moviegur.injection.modules.MovieDatabaseModule;
 import com.asadmshah.moviegur.injection.modules.MoviegurApplicationModule;
 import com.asadmshah.moviegur.injection.modules.NetworkModule;
 import com.asadmshah.moviegur.injection.modules.PreferencesModule;
+import com.asadmshah.moviegur.injection.modules.ResourceSupplierModule;
 
 public final class ApplicationGraphFactory {
 
@@ -18,6 +19,7 @@ public final class ApplicationGraphFactory {
                 .networkModule(new NetworkModule())
                 .movieDatabaseModule(new MovieDatabaseModule())
                 .analyticsModule(new AnalyticsModule())
+                .resourceSupplierModule(new ResourceSupplierModule())
                 .build();
     }
 
