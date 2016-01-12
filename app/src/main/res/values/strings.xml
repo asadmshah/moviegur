@@ -15,4 +15,28 @@
     <string name="reviews">Reviews</string>
     <string name="movies">Movies</string>
     <string name="television">Television</string>
+    <string name="libraries_used_in_moviegur">Libraries used in Moviegur v1.1</string>
+    <string name="about">About</string>
+    <string name="tmdb_attribution">This product uses the TMDb API but is not endorsed or certified by TMDb</string>
+
+    <string name="lib_retrofit_title">Retrofit</string>
+    <string name="lib_retrofit_description">Copyright 2013 Square, Inc.</string>
+    <string name="lib_timber_title">Timber</string>
+    <string name="lib_timber_description">Copyright 2013 Jake Wharton</string>
+    <string name="lib_rxandroid_title">RxAndroid</string>
+    <string name="lib_rxandroid_description">Copyright 2015 The RxAndroid authors</string>
+    <string name="lib_rxjava_title">RxJava</string>
+    <string name="lib_rxjava_description">Copyright 2013 Netflix, Inc.</string>
+    <string name="lib_dagger2_title">Dagger 2</string>
+    <string name="lib_dagger2_description">Copyright 2012 Square, Inc.\nCopyright 2012 Google, Inc.</string>
+    <string name="lib_autoparcel_title">AutoParcel</string>
+    <string name="lib_autoparcel_description">Copyright 2014 Frankie Sardo\nCopyright 2013 Google, Inc.</string>
+    <string name="lib_glide_title">Glide</string>
+    <string name="lib_glide_description">Copyright 2014 Google, Inc.</string>
+    <string name="lib_logansquare_title">LoganSquare</string>
+    <string name="lib_logansquare_description">Copyright 2015 BlueLine Labs, Inc.</string>
+    <string name="lib_retrofitlogansquare_title">retrofit-logansquare</string>
+    <string name="lib_retrofitlogansquare_description">Copyright 2016 Marcel Schnelle</string>
+    <string name="lib_eventbus_title">EventBus</string>
+    <string name="lib_eventbus_description">Copyright 2016 greenrobot</string>
 </resources>

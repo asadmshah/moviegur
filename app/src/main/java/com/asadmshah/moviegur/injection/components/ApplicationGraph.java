@@ -11,6 +11,7 @@ import com.asadmshah.moviegur.injection.modules.PreferencesModule;
 import com.asadmshah.moviegur.injection.modules.ResourceSupplierModule;
 import com.asadmshah.moviegur.network.MovieDatabaseClient;
 import com.asadmshah.moviegur.preferences.PreferencesStore;
+import com.asadmshah.moviegur.screens.about.AboutScreenPresenter;
 import com.asadmshah.moviegur.screens.main.MainScreenPresenter;
 import com.asadmshah.moviegur.screens.movie_summary.MovieSummaryScreenPresenter;
 import com.asadmshah.moviegur.screens.movies_list.MoviesListScreenPresenter;
@@ -36,6 +37,7 @@ public interface ApplicationGraph {
     void inject(MainScreenPresenter presenter);
     void inject(MoviesListScreenPresenter presenter);
     void inject(MovieSummaryScreenPresenter presenter);
+    void inject(AboutScreenPresenter presenter);
 
     PreferencesStore preferencesStore();
     EventBus eventBus();

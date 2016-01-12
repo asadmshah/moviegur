@@ -2,11 +2,29 @@
 <resources>
 
     <string-array name="library_titles">
-
+        <item>@string/lib_retrofit_title</item>
+        <item>@string/lib_timber_title</item>
+        <item>@string/lib_rxandroid_title</item>
+        <item>@string/lib_rxjava_title</item>
+        <item>@string/lib_dagger2_title</item>
+        <item>@string/lib_autoparcel_title</item>
+        <item>@string/lib_glide_title</item>
+        <item>@string/lib_logansquare_title</item>
+        <item>@string/lib_retrofitlogansquare_title</item>
+        <item>@string/lib_eventbus_title</item>
     </string-array>
 
     <string-array name="library_descriptions">
-
+        <item>@string/lib_retrofit_description</item>
+        <item>@string/lib_timber_description</item>
+        <item>@string/lib_rxandroid_description</item>
+        <item>@string/lib_rxjava_description</item>
+        <item>@string/lib_dagger2_description</item>
+        <item>@string/lib_autoparcel_description</item>
+        <item>@string/lib_glide_description</item>
+        <item>@string/lib_logansquare_description</item>
+        <item>@string/lib_retrofitlogansquare_description</item>
+        <item>@string/lib_eventbus_description</item>
     </string-array>
 
 </resources>
