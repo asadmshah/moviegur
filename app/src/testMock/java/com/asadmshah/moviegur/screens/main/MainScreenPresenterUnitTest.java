@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 import rx.plugins.RxRunOnImmediateThreadRule;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
@@ -79,6 +80,24 @@ public class MainScreenPresenterUnitTest {
 
         assertThat(toolbarTitleStringResCaptor.getValue())
                 .isEqualTo(R.string.movies);
+    }
+
+    @Test
+    public void onOptionsItemSelected_shouldShowAboutScreen() {
+        presenter.onCreate(mockGraph, view);
+        presenter.onPrepareOptionsMenu();
+        assertThat(presenter.onOptionsItemSelected(R.id.action_about)).isTrue();
+
+        verify(view).showAboutScreen();
+    }
+
+    @Test
+    public void onOptionsItemSelected_shouldDoNothing() {
+        presenter.onCreate(mockGraph, view);
+        presenter.onPrepareOptionsMenu();
+        assertThat(presenter.onOptionsItemSelected(0)).isFalse();
+
+        verify(view, never()).showAboutScreen();
     }
 
     @Test

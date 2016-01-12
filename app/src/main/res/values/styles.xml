@@ -12,6 +12,7 @@
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textColorPrimary">@color/toolbar_items</item>
+        <item name="android:colorBackground">@color/mdWhite</item>
     </style>
 
 </resources>

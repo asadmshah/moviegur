@@ -20,6 +20,8 @@ public interface MainScreenContract {
         void deBlurContainerPrimary(long animationDuration);
 
         int getCurrentPage();
+
+        void showAboutScreen();
     }
 
     interface Presenter extends PresenterSaveable, PagerDataSource, MoviesListScreenContract.EventListener, MovieSummaryScreenContract.EventListener {
@@ -27,6 +29,8 @@ public interface MainScreenContract {
         void onCreate(ApplicationGraph graph, View view);
 
         void onPrepareOptionsMenu();
+
+        boolean onOptionsItemSelected(int itemId);
 
         void onStart();
 

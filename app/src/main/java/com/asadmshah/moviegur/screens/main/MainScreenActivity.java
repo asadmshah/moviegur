@@ -2,6 +2,7 @@ package com.asadmshah.moviegur.screens.main;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,12 +10,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.asadmshah.moviegur.MoviegurApplication;
 import com.asadmshah.moviegur.R;
 import com.asadmshah.moviegur.injection.components.ApplicationGraph;
 import com.asadmshah.moviegur.models.MoviesList;
+import com.asadmshah.moviegur.screens.about.AboutScreenActivity;
 import com.asadmshah.moviegur.screens.movie_summary.MovieSummaryScreenFragment;
 import com.asadmshah.moviegur.utils.BundleBackedPresenterSaverRestorer;
 import com.asadmshah.moviegur.widgets.BlurView;
@@ -53,10 +56,21 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenC
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main_screen, menu);
+        return true;
+    }
+
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         presenter.onPrepareOptionsMenu();
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return presenter.onOptionsItemSelected(item.getItemId()) || super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -160,6 +174,11 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenC
     @Override
     public int getCurrentPage() {
         return viewPager.getCurrentItem();
+    }
+
+    @Override
+    public void showAboutScreen() {
+        startActivity(new Intent(this, AboutScreenActivity.class));
     }
 
     @Override

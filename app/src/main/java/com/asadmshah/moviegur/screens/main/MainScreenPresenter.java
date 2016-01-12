@@ -47,6 +47,17 @@ public class MainScreenPresenter implements MainScreenContract.Presenter {
     }
 
     @Override
+    public boolean onOptionsItemSelected(int itemId) {
+        switch (itemId) {
+            case R.id.action_about:
+                view.showAboutScreen();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override
     public void onPrepareOptionsMenu() {
         view.setToolbarTitle(R.string.movies);
     }
